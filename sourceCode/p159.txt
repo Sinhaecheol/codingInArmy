@@ -1,0 +1,38 @@
+/* 문제: p.159 카드 번호 맞추기 게임(up and down)
+	작성일자: 2020-06-08
+*/
+
+
+package project;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class p159 {
+	public static void main(String[] args) {
+		int times = 0;
+		
+		Random random = new Random();
+		
+		int randint = random.nextInt(100);
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		while(1>0) {
+			System.out.print("수를 입력하세요.");
+			int inputValue = scanner.nextInt();
+			
+			times++;
+			
+			if(inputValue == randint) break;
+			if(inputValue > randint) System.out.println("down");
+			if(inputValue < randint) System.out.println("up");
+		}
+		
+		System.out.println(times);
+		
+		scanner.close();
+		
+    }
+
+}
