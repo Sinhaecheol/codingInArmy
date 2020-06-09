@@ -1,0 +1,26 @@
+/* 문제: 2000년 1월 1일 부터의 달력을 만드시오. 사용자가 ????-??-?? 을 입력하면 요일을 알려주고 해당 달의 달력을 출력. 자체제작 문제.
+	작성일자: 2020-06-09
+*/
+
+package project;
+
+import java.util.Scanner;
+import java.util.Date; // 날짜 계산을 위한 Date클래스 import
+import java.text.SimpleDateFormat; // string -> date 형변환을 위한 클래스
+
+public class SelfProduced {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in); // Scanner클래스 생성
+		
+		System.out.println("yyyy-MM-dd 형식으로 날짜를 입력하세요.");
+		String inputDate = scanner.nextLine(); // 사용자에게 날짜를 입력받음
+		
+		SimpleDateFormat transInputDate = new SimpleDateFormat("yyyy-MM-dd"); // yyyy-MM-dd 형식으로 설정
+		Date date = transInputDate.parse(inputDate); //  string -> date 형변환
+
+		System.out.println(date);
+		
+		scanner.close();
+		
+	}
+}
